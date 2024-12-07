@@ -19,6 +19,7 @@
     <!-- Modules -->
     <script src="../script/confirm.js"></script>
     <script src="../script/title.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <title>Lapor Heker</title>
 

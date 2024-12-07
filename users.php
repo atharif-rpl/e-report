@@ -178,7 +178,7 @@ $roles = query("SELECT * FROM roles");
                                                 <div class="col-span-1">
                                                     <label for="phone_number" class="block mb-2 text-sm font-medium text-gray-600">Phone</label>
                                                     <input type="text" value="<?= $user['phone_number'] ?>" name="phone_number" class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5" placeholder="628124123">
-                                                </div>
+                                            </div>
                                                 <div class="col-span-1 ">
                                                     <label for="role_id" class="block mb-2 text-sm font-medium text-gray-600">Role</label>
                                                     <select name="role_id" class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">

@@ -20,29 +20,34 @@ if (isset($_SESSION['login'])) {
 </head>
 
 
-<body class="bg-gray-200 font-sans text-gray-700">
+<body class="bg-gray-200 font-sans text-gray-700 flex align-middle ">
     <div class="container mx-auto p-8 flex">
         <div class="max-w-md w-full mx-auto">
+           
+
+            <div class="bg-white rounded-lg overflow-hidden shadow-2xl h-[30rem]">
+
             <div class="container flex flex-col justify-center items-center">
-                <img src="../assets/images/logo.png " class="mr-3 w-1/4" alt="Logo" />
-                <span class="bg-gradient-to-r text-transparent from-green-500 to-black bg-clip-text">
-                    <h1 class="text-4xl text-center mb-12 font-bold ">Login lur</h1>
-                </span>
+                
+                    <h1 class="text-4xl text-center pt-11 font-bold ">Login</h1>
+             
 
             </div>
-
-            <div class="bg-white rounded-lg overflow-hidden shadow-2xl">
                 <div class="p-8">
                     <form method="POST" action="../utils/auth.php">
                         <div class="mb-5">
-                            <input placeholder="Username" type="text" name="username" class="block w-full p-3 rounded bg-gray-200 border border-transparent focus:outline-none">
+                          <p class="font-bold">Username</p>
+                            <input placeholder="Username" type="text" name="username" class="block w-full p-3 rounded-xl bg-gray-200 border border-transparen  focus:outline-none">
                         </div>
+
 
                         <div class="mb-5">
-                            <input placeholder="*********" type="password" name="password" class="block w-full p-3 rounded bg-gray-200 border border-transparent focus:outline-none">
+                            <p class="font-bold">Password</p>
+                            <input placeholder="*********" type="password" name="password" class="block w-full p-3 rounded-xl bg-gray-200 border border-transparent focus:outline-none">
                         </div>
+                        
 
-                        <button type="submit" name="login" class="w-full p-3 mt-4 bg-blue-500 text-white rounded shadow hover:bg-blue-600">Login</button>
+                        <button type="submit" name="login" class="mt-10 w-full rounded-2xl border-2 border-dashed border-black bg-white px-6 py-3 font-semibold uppercase text-black transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none">Login</button>
                     </form>
                 </div>
 

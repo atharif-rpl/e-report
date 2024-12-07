@@ -6,7 +6,7 @@ header('refresh:3;Content-Type: text/html; charset=UTF-8');
 
 ?>
 
-<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4 pl-48">
     <!-- Main Content Cards (Left Side) -->
     <div class="col-span-3 grid grid-cols-1 gap-4">
         <!-- Card 1 -->
@@ -17,13 +17,12 @@ header('refresh:3;Content-Type: text/html; charset=UTF-8');
             <?php
             foreach ($reports as $report) :
                 $report['content'] = html_entity_decode(html_entity_decode(strval($report['content'])));
-
             ?>
-                <div class="border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-fit mb-4">
+                <div class="transform transition-all hover:scale-105 hover:shadow-xl border-2 border-dashed rounded-lg border-gray-300 dark:border-gray-600 h-fit mb-4 bg-white hover:bg-gradient-to-r from-blue-600 to-indigo-600">
                     <a href="index.php?page=detail&id=<?= $report['id'] ?>" class="block h-full">
-                        <div class="max-w-full border border-gray-200 rounded-lg shadow h-full flex flex-col">
+                        <div class="max-w-full border border-gray-200 rounded-lg shadow-lg h-full flex flex-col overflow-hidden">
                             <?php if ($report['thumbnail']): ?>
-                                <img class="rounded-t-lg w-full h-48 object-cover" alt="<?= $report['thumbnail'] ?>" src="<?= "../assets/upload/" . $report['thumbnail'] ?>" />
+                                <img class="rounded-t-lg w-full h-48 object-cover transition-transform duration-300 transform hover:scale-110" alt="<?= $report['thumbnail'] ?>" src="<?= "../assets/upload/" . $report['thumbnail'] ?>" />
                             <?php endif ?>
                             <div class="p-5 flex-grow flex flex-col">
                                 <div class="flex items-center mb-4">
@@ -32,28 +31,42 @@ header('refresh:3;Content-Type: text/html; charset=UTF-8');
                                         <p class="text-xs text-gray-500 truncate dark:text-gray-400"><?= $report['created_at'] ?></p>
                                     </div>
                                 </div>
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-600"><?= $report['title'] ?></h5>
-                                <?= $report['content'] ?>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-white"><?= $report['title'] ?></h5>
+                                <p class="text-gray-100 text-sm"><?= substr($report['content'], 0, 100) . '...' ?></p>
                             </div>
                         </div>
                     </a>
                 </div>
             <?php endforeach; ?>
         <?php endif ?>
-
     </div>
+</div>
 
-    <!-- Breaking News (Right Side) -->
-    <div class="border-blue-600 border-4 rounded-lg shadow h-fit flex flex-col justify-between col-span-1 md:col-span-1 hidden md:block">
-        <div class="p-5">
-            <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-600">Breaking News!!</h5>
-        </div>
-        <img class="rounded-2xl w-5/6 h-48 text-center mx-auto" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
-        <div class="p-5">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-600">Checkout DEV++</h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Invest in your developer career with our value-maximizing membership program.</p>
-            <button class="w-full outline-blue-500 outline rounded text-blue-500 font-normal text-lg p-1 hover:bg-blue-500 hover:text-white hover:font-bold">Read more</button>
-        </div>
-    </div>
+<style>
+    .hover\:scale-105:hover {
+        transform: scale(1.05); /* Sedikit perbesaran saat dihover */
+    }
 
+    .hover\:shadow-xl:hover {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Bayangan yang lebih besar */
+    }
+
+    .transition-all {
+        transition: all 0.3s ease; /* Transisi untuk animasi yang lebih halus */
+    }
+
+    .hover\:bg-gradient-to-r:hover {
+        background-image: linear-gradient(to right, #1E3A8A, #4F46E5); /* Gradasi saat hover */
+    }
+
+    .transform {
+        transition: transform 0.3s ease;
+    }
+
+    .hover\:scale-110:hover {
+        transform: scale(1.1); /* Perbesaran gambar saat hover */
+    }
+</style>
+
+   
 </div>
